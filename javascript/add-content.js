@@ -1,23 +1,22 @@
-var today = new Date();
-function time (){
-    //input
-    var hournow = prompt ('enter the time now','it will be 0-24');
-    var greeting;
-    //process
-    if (hournow >= 18 && hournow <= 24){
-        greeting = 'good evening!';
-    }
-    else if (hournow >= 12 && hournow < 18){
-        greeting = 'good afternoon!';
-    }
-    else if (hournow >= 0 && hournow < 12){
-        greeting = 'good morning!';
-    }
-    else {
-        greeting = 'welcome!';
-    }
-    //output
-    return greeting;
+var showOrder = function (){
+var orderPhoto = '';
+var order;
+while (order !== "house" && order !== "hotel"){
+    order = prompt ("pick hotel or house");
 }
-var greeting = time();
-document.write ('<h3>' + greeting + '</h3>');
+var numberOrder;
+numberOrder = prompt ("what the numbers of house or hotel you need");
+for (var i = 0; i < numberOrder; i++){
+    console.log ("i =" + i);
+    if (order == "hotel"){
+      orderPhoto = orderPhoto + '<img src ="images/hotel.png">';
+    }
+    else if (order == "house"){
+        orderPhoto = orderPhoto + '<img src ="images/house.png">';
+    }
+}
+return orderPhoto;
+}
+document.write (showOrder());
+
+
