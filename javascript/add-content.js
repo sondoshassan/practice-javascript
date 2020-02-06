@@ -1,22 +1,24 @@
-var showOrder = function (){
-var orderPhoto = '';
-var order;
-while (order !== "house" && order !== "hotel"){
-    order = prompt ("pick hotel or house");
-}
-var numberOrder;
-numberOrder = prompt ("what the numbers of house or hotel you need");
-for (var i = 0; i < numberOrder; i++){
-    console.log ("i =" + i);
-    if (order == "hotel"){
-      orderPhoto = orderPhoto + '<img src ="images/hotel.png">';
+var hournow;
+function time (){
+    //input
+    var hournow = prompt ('enter the time now','it will be 0-24'); //identify var and store the data from prompt 
+    var greeting; //identify var 
+    //process
+    if (hournow >= 18 && hournow <= 24){ //if statment to determine which massege I want to sent for user
+        greeting = 'good evening!';
     }
-    else if (order == "house"){
-        orderPhoto = orderPhoto + '<img src ="images/house.png">';
+    else if (hournow >= 12 && hournow < 18){
+        greeting = 'good afternoon!';
     }
+    else if (hournow >= 0 && hournow < 12){
+        greeting = 'good morning!';
+    }
+    else {
+        greeting = 'welcome!';
+    }
+    //output
+    return greeting; 
 }
-return orderPhoto;
-}
-document.write (showOrder());
+document.write ('<p>' + time() + '</p>');
 
 
